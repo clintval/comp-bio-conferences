@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+from __future__ import print_function
+
 import click
 import pandas as pd
 import requests
@@ -14,7 +16,7 @@ def all_conferences():
     calendar = {}
     for section in soup.findAll("center"):
         year = section.find('p').getText().strip()
-        table, *_ = pd.read_html(str(section.find('table')), header=0)
+        table = pd.read_html(str(section.find('table')), header=0)[0]
         calendar[year] = table
     return calendar
 
@@ -26,8 +28,8 @@ if __name__ == '__main__':
     @click.argument('year', type=click.Choice(calendar.keys()))
     def print_calendar(year):
         frame = calendar[year]
-        header = frame.columns.values
         values = frame.values.tolist()
-        print(SingleTable([header, *values]).table)
+        values.insert(0, frame.columns.values)
+        print(SingleTable(values).table)
 
     print_calendar()
