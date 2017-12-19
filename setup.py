@@ -11,6 +11,7 @@ setup(
     install_requires=[
         'beautifulsoup4',
         'click',
+        'lxml',
         'pandas',
         'requests',
         'terminaltables',

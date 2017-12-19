@@ -4,7 +4,7 @@
 
 This list of computation biology conferences is maintained by [Mukul Bansal](http://www.engr.uconn.edu/~mukul/) at UCONN.
 
-Please consider [emailing him](mukul.bansal@uconn.edu) if you have any suggestions or if there are any errors.
+Please consider [emailing him](mailto:mukul.bansal@uconn.edu) if you have any suggestions or if there are any errors.
 
 #### Installation
 
